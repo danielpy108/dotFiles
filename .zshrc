@@ -8,25 +8,7 @@ export ZSH="/home/sjukdom/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
-
-SPACESHIP_USER_SHOW=always
-SPACESHIP_HOST_SHOW=always
-SPACESHIP_HOST_COLOR=green
-SPACESHIP_USER_COLOR=green
-# SPACESHIP_DIR_COLOR=
-
-SPACESHIP_PROMPT_ORDER=(
-    user
-    host
-    dir
-    docker
-    venv
-    conda
-    pyenv
-    line_sep
-    char
-)
+ZSH_THEME="dracula"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -86,10 +68,7 @@ SPACESHIP_PROMPT_ORDER=(
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-        python
-        zsh-autosuggestions
-        z)
+plugins=(python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,19 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases
+alias python3.7="~/anaconda3/bin/python"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/sjukdom/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/sjukdom/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/sjukdom/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/sjukdom/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+eval "$(starship init zsh)"
